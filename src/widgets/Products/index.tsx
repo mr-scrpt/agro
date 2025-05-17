@@ -1,6 +1,5 @@
 import React from 'react';
-import Section from '@/shared/ui/Section';
-import Container from '@/shared/ui/Container';
+import { Container } from '@/shared/ui/Container';
 import { ProductCard } from '@/entities/ProductCard';
 
 const products = [
@@ -16,14 +15,14 @@ const products = [
   }
 ];
 
-export const Products: React.FC = () => {
+export function Products() {
   return (
-    <Section id="products" className="bg-white">
+    <section id="products" className="py-16 bg-white">
       <Container>
-        <h2 className="text-3xl font-bold mb-8 text-center border-b-2 border-ukraine-blue pb-2 inline-block mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-12">
           Наша аграрна продукція
         </h2>
-        <div className="grid md:grid-cols-2 gap-8 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {products.map((product) => (
             <ProductCard
               key={product.title}
@@ -34,8 +33,8 @@ export const Products: React.FC = () => {
           ))}
         </div>
       </Container>
-    </Section>
+    </section>
   );
-};
+}
 
 export default Products; 
