@@ -9,6 +9,19 @@ export const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    // Disable body scroll when mobile menu is open
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isMobileMenuOpen]);
+
+  useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
@@ -19,6 +32,11 @@ export const Header: React.FC = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  // Function to close the mobile menu
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -40,7 +58,7 @@ export const Header: React.FC = () => {
           
           {/* Mobile menu button */}
           <button 
-            className="md:hidden text-gray-700"
+            className="md:hidden text-gray-700 z-50"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <svg 
@@ -59,17 +77,23 @@ export const Header: React.FC = () => {
           </button>
         </div>
         
-        {/* Mobile menu */}
+        {/* Mobile menu - fullscreen overlay */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4">
-            <div className="flex flex-col">
-              <MainMenu variant="header" />
+          <div className="fixed top-0 left-0 w-full h-full bg-white z-40 flex flex-col">
+            <div className="w-full p-6">
               <a 
                 href="tel:+380XXXXXXXXX" 
-                className="mt-4 py-2 font-medium text-ukraine-blue hover:text-ukraine-yellow transition-colors"
+                className="block mt-20 py-2 font-medium text-ukraine-blue hover:text-ukraine-yellow transition-colors text-xl text-center"
               >
                 +380 (XX) XXX-XX-XX
               </a>
+            </div>
+            <div className="flex-grow flex flex-col justify-center items-center">
+              <MainMenu 
+                variant="header" 
+                onItemClick={closeMobileMenu} 
+                className="flex flex-col items-center" 
+              />
             </div>
           </div>
         )}
