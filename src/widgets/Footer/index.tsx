@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
       <Container>
         <div className="md:flex md:flex-row md:justify-between md:items-center">
           {/* For mobile: Logo at top, centered */}
-          <div className="order-1 md:order-1 mb-6 md:mb-0 text-center md:text-left">
+          <div className="order-1 md:order-1 mb-6 md:mb-0 text-center md:text-left flex justify-center md:justify-start">
             <Logo variant="light" />
           </div>
           
