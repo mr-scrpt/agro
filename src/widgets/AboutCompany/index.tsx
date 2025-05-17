@@ -6,7 +6,7 @@ export const AboutCompany: React.FC = () => {
   return (
     <Section 
       id="about" 
-      className="bg-gray-50 relative bg-cover bg-center" 
+      className="bg-gray-50 relative bg-cover bg-top min-h-[800px] max-h-[1200px] md:h-[clamp(800px,calc(100vh-80px),1200px)] flex items-center" 
       style={{ backgroundImage: 'url(/images/bg_field.png)' }}
     >
       <div className="absolute inset-0 bg-black/30" />
