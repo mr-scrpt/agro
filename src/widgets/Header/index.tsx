@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Logo } from '@/entities/Logo';
 import Section from '@/shared/ui/Section';
 import Container from '@/shared/ui/Container';
@@ -9,6 +9,7 @@ import { companyInfo } from '@/shared/config/company';
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const headerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Disable body scroll when mobile menu is open
@@ -35,6 +36,40 @@ export const Header: React.FC = () => {
     };
   }, []);
 
+  // Update CSS variable for header height
+  useEffect(() => {
+    const updateHeaderHeight = () => {
+      if (headerRef.current) {
+        const headerHeight = headerRef.current.offsetHeight;
+        document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+      }
+    };
+    
+    // Initial update
+    updateHeaderHeight();
+    
+    // Update on scroll state change and window resize
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', updateHeaderHeight);
+      
+      // Use MutationObserver to detect height changes
+      const observer = new MutationObserver(updateHeaderHeight);
+      if (headerRef.current) {
+        observer.observe(headerRef.current, { 
+          attributes: true, 
+          childList: true, 
+          subtree: true 
+        });
+      }
+    }
+    
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', updateHeaderHeight);
+      }
+    };
+  }, [isScrolled]);
+
   // Function to close the mobile menu
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
@@ -42,7 +77,8 @@ export const Header: React.FC = () => {
 
   return (
     <Section 
-      id="header" 
+      id="header"
+      ref={headerRef}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled ? 'bg-white shadow-md py-2' : 'bg-white/90 py-4'
       }`}

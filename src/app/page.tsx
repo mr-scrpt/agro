@@ -7,7 +7,7 @@ import { CompanyPrinciples } from '@/widgets/CompanyPrinciples';
 
 export default function Home() {
   return (
-    <main className="min-h-screen pt-20">
+    <main className="min-h-screen" style={{ paddingTop: '72px' }}>
       <Header />
       <AboutCompany />
       <CompanyPrinciples />
