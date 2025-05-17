@@ -14,7 +14,8 @@ export const AboutCompany: React.FC = () => {
         <div className="flex w-full h-full">
           {/* Left section with content and overlay */}
           <div className="relative w-[100%] md:w-1/2 h-full">
-            <div className="absolute inset-0 bg-black/50" />
+          {/* <div className="absolute inset-0" style={{ backgroundColor: 'rgba(0, 87, 183, 0.8)' }} /> */}
+            <div className="absolute inset-0 bg-black/35" />
             <div className="relative z-10 h-full flex items-center p-6">
               <div>
                 <h2 className="text-3xl font-bold mb-6 text-center md:text-left border-b-2 border-ukraine-yellow pb-2 inline-block text-white">
