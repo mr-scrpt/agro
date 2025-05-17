@@ -30,6 +30,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-800 text-white py-8">
       <Container>
+        {/* Main footer content */}
         <div className="md:flex md:flex-row md:justify-between md:items-center">
           {/* For mobile: Logo at top, centered */}
           <div className="order-1 md:order-1 mb-6 md:mb-0 text-center md:text-left flex justify-center md:justify-start">
@@ -42,14 +43,19 @@ export const Footer: React.FC = () => {
           </div>
           
           {/* For mobile: Social links next */}
-          <div className="order-3 md:order-4 mb-6 md:mb-0">
+          <div className="order-3 md:order-3 mb-6 md:mb-0">
             <SocialLinks />
           </div>
           
           {/* For mobile: Copyright at bottom */}
-          <div className="order-4 md:order-3 text-center md:text-left">
+          <div className="order-4 md:hidden text-center">
             <p className="text-sm">© {new Date().getFullYear()} Аграрна компанія. Усі права захищені.</p>
           </div>
+        </div>
+        
+        {/* Copyright on desktop - separate row */}
+        <div className="hidden md:block md:mt-8 md:pt-4 md:border-t md:border-gray-700">
+          <p className="text-sm text-center">© {new Date().getFullYear()} Аграрна компанія. Усі права захищені.</p>
         </div>
       </Container>
     </footer>
