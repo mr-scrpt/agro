@@ -1,15 +1,8 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { Logo } from '@/entities/Logo';
-import { Navigation } from '@/entities/Navigation';
 import Container from '@/shared/ui/Container';
-
-const navItems = [
-  { label: 'Про компанію', href: 'about' },
-  { label: 'Принципи компанії', href: 'principles' },
-  { label: 'Продукція', href: 'products' },
-  { label: 'Контакти', href: 'contacts' },
-];
+import { MainMenu } from '@/features/MainMenu';
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,7 +29,7 @@ export const Header: React.FC = () => {
           <Logo />
           
           <div className="hidden md:flex items-center">
-            <Navigation items={navItems} />
+            <MainMenu variant="header" />
             <a 
               href="tel:+380XXXXXXXXX" 
               className="ml-6 font-medium text-ukraine-blue hover:text-ukraine-yellow transition-colors duration-200"
@@ -70,7 +63,7 @@ export const Header: React.FC = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4">
             <div className="flex flex-col">
-              <Navigation items={navItems} />
+              <MainMenu variant="header" />
               <a 
                 href="tel:+380XXXXXXXXX" 
                 className="mt-4 py-2 font-medium text-ukraine-blue hover:text-ukraine-yellow transition-colors"

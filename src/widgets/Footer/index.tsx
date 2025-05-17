@@ -2,13 +2,7 @@
 import React from 'react';
 import Container from '@/shared/ui/Container';
 import { Logo } from '@/entities/Logo';
-import { Navigation } from '@/entities/Navigation';
-
-const navItems = [
-  { label: 'Про компанію', href: 'about' },
-  { label: 'Продукція', href: 'products' },
-  { label: 'Контакти', href: 'contacts' },
-];
+import { MainMenu } from '@/features/MainMenu';
 
 const SocialLinks: React.FC = () => {
   return (
@@ -42,7 +36,7 @@ export const Footer: React.FC = () => {
             <p className="text-sm mt-2">© {new Date().getFullYear()} Аграрна компанія. Усі права захищені.</p>
           </div>
           <div className="mb-4 md:mb-0">
-            <Navigation variant="footer" items={navItems} />
+            <MainMenu variant="footer" />
           </div>
           <div className="mt-4 md:mt-0">
             <SocialLinks />

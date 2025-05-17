@@ -1,9 +1,5 @@
 import React from 'react';
-
-interface NavItem {
-  label: string;
-  href: string;
-}
+import { NavItem } from '@/shared/config/navigation';
 
 interface NavigationProps {
   items: NavItem[];
