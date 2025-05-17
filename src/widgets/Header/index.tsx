@@ -6,6 +6,7 @@ import Container from '@/shared/ui/Container';
 
 const navItems = [
   { label: 'Про компанію', href: 'about' },
+  { label: 'Принципи компанії', href: 'principles' },
   { label: 'Продукція', href: 'products' },
   { label: 'Контакти', href: 'contacts' },
 ];

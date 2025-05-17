@@ -2,7 +2,7 @@ import { Container } from '@/shared/ui/Container';
 
 export function CompanyPrinciples() {
   return (
-    <section className="py-16 bg-gray-50">
+    <section id="principles" className="py-16 bg-gray-50">
       <Container>
         <h2 className="text-3xl font-bold text-center mb-12">Принципи роботи нашої компанії</h2>
         
