@@ -1,4 +1,5 @@
 import React from 'react';
+import Section from '@/shared/ui/Section';
 import { Container } from '@/shared/ui/Container';
 import { PrincipleCard } from '@/entities/PrincipleCard';
 
@@ -37,7 +38,7 @@ const principles = [
 
 export function CompanyPrinciples() {
   return (
-    <section id="principles" className="py-16 bg-gray-50">
+    <Section id="principles" className="py-16 bg-gray-50">
       <Container>
         <h2 className="text-3xl font-bold text-center mb-6 border-b-2 border-ukraine-yellow pb-2 inline-block mx-auto">Принципи роботи нашої компанії</h2>
         
@@ -52,7 +53,7 @@ export function CompanyPrinciples() {
           ))}
         </div>
       </Container>
-    </section>
+    </Section>
   );
 }
 

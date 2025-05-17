@@ -16,7 +16,7 @@ export const Section: React.FC<SectionProps> = ({
   return (
     <section
       id={id}
-      className={`py-16 ${className}`}
+      className={`${className}`}
       style={style}
     >
       {children}

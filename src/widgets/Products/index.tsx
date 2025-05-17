@@ -1,4 +1,5 @@
 import React from 'react';
+import Section from '@/shared/ui/Section';
 import { Container } from '@/shared/ui/Container';
 import { ProductCard } from '@/entities/ProductCard';
 
@@ -17,7 +18,7 @@ const products = [
 
 export function Products() {
   return (
-    <section id="products" className="py-16 bg-white">
+    <Section id="products" className="py-16 bg-white">
       <Container>
         <h2 className="text-3xl font-bold text-center mb-6 border-b-2 border-ukraine-yellow pb-2 inline-block mx-auto">
           Наша аграрна продукція
@@ -33,7 +34,7 @@ export function Products() {
           ))}
         </div>
       </Container>
-    </section>
+    </Section>
   );
 }
 

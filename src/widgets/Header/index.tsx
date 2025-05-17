@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { Logo } from '@/entities/Logo';
+import Section from '@/shared/ui/Section';
 import Container from '@/shared/ui/Container';
 import { MainMenu } from '@/features/MainMenu';
 
@@ -39,9 +40,12 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-md py-2' : 'bg-white/90 py-4'
-    }`}>
+    <Section 
+      id="header" 
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white shadow-md py-2' : 'bg-white/90 py-4'
+      }`}
+    >
       <Container>
         <div className="flex justify-between items-center">
           <Logo />
@@ -98,7 +102,7 @@ export const Header: React.FC = () => {
           </div>
         )}
       </Container>
-    </header>
+    </Section>
   );
 };
 

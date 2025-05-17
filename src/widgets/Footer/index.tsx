@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Section from '@/shared/ui/Section';
 import Container from '@/shared/ui/Container';
 import { Logo } from '@/entities/Logo';
 import { MainMenu } from '@/features/MainMenu';
@@ -28,7 +29,7 @@ const SocialLinks: React.FC = () => {
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-800 text-white py-8">
+    <Section id="footer" className="bg-gray-800 text-white py-8">
       <Container>
         {/* Main footer content */}
         <div className="md:flex md:flex-row md:justify-between md:items-center">
@@ -58,7 +59,7 @@ export const Footer: React.FC = () => {
           <p className="text-sm text-center">© {new Date().getFullYear()} Аграрна компанія. Усі права захищені.</p>
         </div>
       </Container>
-    </footer>
+    </Section>
   );
 };
 

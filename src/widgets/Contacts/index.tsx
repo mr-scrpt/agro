@@ -5,7 +5,7 @@ import { ContactItem } from '@/entities/ContactItem';
 
 export const Contacts: React.FC = () => {
   return (
-    <Section id="contacts" className="bg-gray-50">
+    <Section id="contacts" className="py-16 bg-gray-50">
       <Container>
         <h2 className="text-3xl font-bold mb-8 text-center border-b-2 border-ukraine-yellow pb-2 inline-block mx-auto">
           Наші контакти
