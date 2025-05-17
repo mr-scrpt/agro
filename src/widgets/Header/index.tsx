@@ -51,7 +51,7 @@ export const Header: React.FC = () => {
         <div className="flex justify-between items-center">
           <Logo />
           
-          <div className="hidden md:flex items-center">
+          <div className="hidden xl:flex items-center">
             <MainMenu variant="header" />
             <a 
               href={`tel:${companyInfo.phones[0]}`}
@@ -63,7 +63,7 @@ export const Header: React.FC = () => {
           
           {/* Mobile menu button */}
           <button 
-            className="md:hidden text-gray-700 z-50"
+            className="xl:hidden text-gray-700 z-50"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <svg 

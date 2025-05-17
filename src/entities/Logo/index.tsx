@@ -38,7 +38,7 @@ export const Logo: React.FC<LogoProps> = ({ variant = 'default' }) => {
           strokeLinecap="round"
         />
       </svg>
-      <span className={`font-bold text-xl ${textColor}`}>{companyInfo.shortName}</span>
+      <span className={`font-bold text-sm md:text-base xl:text-lg 2xl:text-xl ${textColor}`}>{companyInfo.name}</span>
     </div>
   );
 };
