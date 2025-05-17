@@ -6,7 +6,7 @@ import { MainMenu } from '@/features/MainMenu';
 
 const SocialLinks: React.FC = () => {
   return (
-    <div className="flex space-x-4">
+    <div className="flex space-x-4 md:justify-start justify-center">
       <a href="#" className="text-white hover:text-ukraine-yellow transition-colors">
         <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
           <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
@@ -30,16 +30,25 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-800 text-white py-8">
       <Container>
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
+        <div className="md:flex md:flex-row md:justify-between md:items-center">
+          {/* For mobile: Logo at top, centered */}
+          <div className="order-1 md:order-1 mb-6 md:mb-0 text-center md:text-left">
             <Logo variant="light" />
-            <p className="text-sm mt-2">© {new Date().getFullYear()} Аграрна компанія. Усі права захищені.</p>
           </div>
-          <div className="mb-4 md:mb-0">
-            <MainMenu variant="footer" />
+          
+          {/* For mobile: Menu in middle */}
+          <div className="order-2 md:order-2 mb-6 md:mb-0 text-center md:text-left">
+            <MainMenu variant="footer" className="md:justify-start justify-center" />
           </div>
-          <div className="mt-4 md:mt-0">
+          
+          {/* For mobile: Social links next */}
+          <div className="order-3 md:order-4 mb-6 md:mb-0">
             <SocialLinks />
+          </div>
+          
+          {/* For mobile: Copyright at bottom */}
+          <div className="order-4 md:order-3 text-center md:text-left">
+            <p className="text-sm">© {new Date().getFullYear()} Аграрна компанія. Усі права захищені.</p>
           </div>
         </div>
       </Container>
