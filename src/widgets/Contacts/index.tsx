@@ -30,7 +30,7 @@ export const Contacts: React.FC = () => {
           </div>
           <div className="md:w-1/2">
             {/* Map Component */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-md h-64 md:h-80">
+            <div className="bg-white rounded-lg overflow-hidden shadow-md h-64 md:h-96">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.4771976773625!2d30.5133427!3d50.4480955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce55e0fa8a01%3A0xb78d5c31d3d8eaae!2sKhreshchatyk%20St%2C%20Kyiv%2C%20Ukraine!5e0!3m2!1sen!2sus!4v1637350627044!5m2!1sen!2sus" 
                 width="100%" 
