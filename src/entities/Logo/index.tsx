@@ -1,4 +1,5 @@
 import React from 'react';
+import { companyInfo } from '@/shared/config/company';
 
 interface LogoProps {
   variant?: 'default' | 'light';
@@ -37,7 +38,7 @@ export const Logo: React.FC<LogoProps> = ({ variant = 'default' }) => {
           strokeLinecap="round"
         />
       </svg>
-      <span className={`font-bold text-xl ${textColor}`}>АгроЛенд</span>
+      <span className={`font-bold text-xl ${textColor}`}>{companyInfo.shortName}</span>
     </div>
   );
 };

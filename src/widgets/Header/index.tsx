@@ -4,6 +4,7 @@ import { Logo } from '@/entities/Logo';
 import Section from '@/shared/ui/Section';
 import Container from '@/shared/ui/Container';
 import { MainMenu } from '@/features/MainMenu';
+import { companyInfo } from '@/shared/config/company';
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -53,10 +54,10 @@ export const Header: React.FC = () => {
           <div className="hidden md:flex items-center">
             <MainMenu variant="header" />
             <a 
-              href="tel:+380XXXXXXXXX" 
+              href={`tel:${companyInfo.phones[0]}`}
               className="ml-6 font-medium text-ukraine-blue hover:text-ukraine-yellow transition-colors duration-200"
             >
-              +380 (XX) XXX-XX-XX
+              {companyInfo.phones[0]}
             </a>
           </div>
           
@@ -86,10 +87,10 @@ export const Header: React.FC = () => {
           <div className="fixed top-0 left-0 w-full h-full bg-white z-40 flex flex-col">
             <div className="w-full p-6">
               <a 
-                href="tel:+380XXXXXXXXX" 
+                href={`tel:${companyInfo.phones[0]}`}
                 className="block mt-20 py-2 font-medium text-ukraine-blue hover:text-ukraine-yellow transition-colors text-xl text-center"
               >
-                +380 (XX) XXX-XX-XX
+                {companyInfo.phones[0]}
               </a>
             </div>
             <div className="flex-grow flex flex-col justify-center items-center">

@@ -1,6 +1,7 @@
 import React from 'react';
 import Section from '@/shared/ui/Section';
 import Container from '@/shared/ui/Container';
+import { companyInfo } from '@/shared/config/company';
 
 export const AboutCompany: React.FC = () => {
   return (
@@ -20,10 +21,7 @@ export const AboutCompany: React.FC = () => {
                   Про компанію
                 </h2>
                 <p className="text-white leading-relaxed text-lg">
-                  Ми — молода аграрна компанія, що зростає на родючих землях України. 
-                  Наша місія — вирощувати якісну сільськогосподарську продукцію з турботою 
-                  про землю та людей. Ми поєднуємо сучасні технології з традиціями 
-                  українського землеробства, щоб забезпечити стабільність, якість і розвиток.
+                  {companyInfo.description}
                 </p>
               </div>
             </div>

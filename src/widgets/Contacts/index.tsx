@@ -2,6 +2,7 @@ import React from 'react';
 import Section from '@/shared/ui/Section';
 import Container from '@/shared/ui/Container';
 import { ContactItem } from '@/entities/ContactItem';
+import { companyInfo } from '@/shared/config/company';
 
 export const Contacts: React.FC = () => {
   return (
@@ -15,17 +16,17 @@ export const Contacts: React.FC = () => {
             <ContactItem
               icon="location"
               title="Адреса:"
-              content="[вулиця/номер, місто, область, Україна]"
+              content={companyInfo.address}
             />
             <ContactItem
               icon="phone"
               title="Телефон:"
-              content="+380 (XX) XXX-XX-XX"
+              content={companyInfo.phones[0]}
             />
             <ContactItem
               icon="email"
               title="Email:"
-              content="info@agrarna-kompaniya.ua"
+              content={companyInfo.email}
             />
           </div>
           <div className="md:w-1/2">
