@@ -1,13 +1,13 @@
-import { AboutCompany } from '@/widgets/AboutCompany';
-import { Contacts } from '@/widgets/Contacts';
-import { Footer } from '@/widgets/Footer';
-import { Products } from '@/widgets/Products';
-import { Header } from '@/widgets/Header';
-import { CompanyPrinciples } from '@/widgets/CompanyPrinciples';
+import { AboutCompany } from "@/widgets/AboutCompany";
+import { Contacts } from "@/widgets/Contacts";
+import { Footer } from "@/widgets/Footer";
+import { Products } from "@/widgets/Products";
+import { Header } from "@/widgets/Header";
+import { CompanyPrinciples } from "@/widgets/CompanyPrinciples";
 
 export default function Home() {
   return (
-    <main className="min-h-screen" style={{ paddingTop: '72px' }}>
+    <main className="min-h-screen pt-[130px]">
       <Header />
       <AboutCompany />
       <CompanyPrinciples />
@@ -21,4 +21,5 @@ export default function Home() {
 // Использование SSG
 export function generateStaticParams() {
   return [];
-} 
+}
+
