@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Section from '@/shared/ui/Section';
 import Container from '@/shared/ui/Container';
 import { companyInfo } from '@/shared/config/company';
@@ -7,14 +8,23 @@ export const AboutCompany: React.FC = () => {
   return (
     <Section 
       id="about" 
-      className="bg-gray-50 relative bg-cover bg-top min-h-[550px] max-h-[1200px] md:h-[clamp(800px,calc(100vh-80px),1200px)]" 
-      style={{ backgroundImage: 'url(/images/bg_field.png)' }}
+      className="bg-gray-50 relative bg-cover bg-top min-h-[550px] max-h-[1200px] md:h-[clamp(800px,calc(100vh-80px),1200px)] overflow-hidden" 
     >
+      <div className="absolute inset-0 w-full h-full">
+        <Image
+          src="/images/bg_field.png"
+          alt="Agricultural field background"
+          fill
+          priority
+          sizes="100vw"
+          quality={85}
+          className="object-cover object-top"
+        />
+      </div>
       <Container className="h-full p-0">
         <div className="flex w-full h-full">
           {/* Left section with content and overlay */}
           <div className="relative w-[100%] md:w-1/2 h-full">
-          {/* <div className="absolute inset-0" style={{ backgroundColor: 'rgba(0, 87, 183, 0.8)' }} /> */}
             <div className="absolute inset-0 bg-black/35" />
             <div className="relative z-10 h-full flex items-center p-6">
               <div>

@@ -34,15 +34,15 @@ export const Navigation: React.FC<NavigationProps> = ({
   };
 
   // Common hover effect styles for both variants
-  const commonStyles = "relative transition-all duration-300";
-  const hoverUnderlineEffect = "after:absolute after:content-[''] after:left-0 after:bottom-0 after:h-[2px] after:w-0 hover:after:w-full after:transition-all after:duration-300";
+  const commonStyles = "relative";
+  const hoverUnderlineEffect = "after:absolute after:content-[''] after:left-0 after:bottom-[-4px] after:h-[2px] after:w-0 hover:after:w-full after:transition-all after:duration-300";
   
   // Header-specific styles
   const headerStyles = "text-gray-700 hover:text-[#0057B7] text-center mx-0 md:mx-4 text-xl mb-4 md:mb-0 md:text-base md:inline-block py-2 block font-medium";
   const headerUnderlineColor = "after:bg-[#0057B7]";
   
   // Footer-specific styles with yellow color using direct hex value
-  const footerStyles = "text-gray-300 hover:text-[#FFD700] mx-2 py-2 block";
+  const footerStyles = "text-gray-300 hover:text-[#FFD700] mx-2 py-2 inline-block text-center sm:text-left";
   const footerUnderlineColor = "after:bg-[#FFD700]";
   
   return (
@@ -55,13 +55,15 @@ export const Navigation: React.FC<NavigationProps> = ({
             e.preventDefault();
             scrollToSection(item.href);
           }}
-          className={`${commonStyles} ${hoverUnderlineEffect} ${
-            variant === 'header' 
-              ? `${headerStyles} ${headerUnderlineColor}` 
-              : `${footerStyles} ${footerUnderlineColor}`
-          }`}
+          className={variant === 'header' ? headerStyles : footerStyles}
         >
-          {item.label}
+          <span className={`${commonStyles} ${hoverUnderlineEffect} ${
+            variant === 'header' 
+              ? headerUnderlineColor
+              : footerUnderlineColor
+          }`}>
+            {item.label}
+          </span>
         </a>
       ))}
     </nav>

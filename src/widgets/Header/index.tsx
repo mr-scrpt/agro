@@ -91,9 +91,11 @@ export const Header: React.FC = () => {
             <MainMenu variant="header" />
             <a 
               href={`tel:${companyInfo.phones[0]}`}
-              className="ml-6 font-medium text-ukraine-blue hover:text-ukraine-yellow transition-colors duration-200"
+              className="ml-6 font-medium relative after:absolute after:content-[''] after:left-0 after:bottom-[-4px] after:h-[2px] after:w-full after:bg-[#0057B7] text-[#0057B7]"
             >
-              {companyInfo.phones[0]}
+              <span>
+                {companyInfo.phones[0]}
+              </span>
             </a>
           </div>
           
@@ -124,9 +126,11 @@ export const Header: React.FC = () => {
             <div className="w-full p-6">
               <a 
                 href={`tel:${companyInfo.phones[0]}`}
-                className="block mt-20 py-2 font-medium text-ukraine-blue hover:text-ukraine-yellow transition-colors text-xl text-center"
+                className="block mt-20 py-2 font-medium relative after:absolute after:content-[''] after:left-0 after:bottom-[-4px] after:h-[2px] after:w-full after:bg-[#0057B7] text-[#0057B7] text-xl text-center"
               >
-                {companyInfo.phones[0]}
+                <span>
+                  {companyInfo.phones[0]}
+                </span>
               </a>
             </div>
             <div className="flex-grow flex flex-col justify-center items-center">
