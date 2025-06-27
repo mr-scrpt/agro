@@ -4,6 +4,7 @@ import { Footer } from "@/widgets/Footer";
 import { Products } from "@/widgets/Products";
 import { Header } from "@/widgets/Header";
 import { CompanyPrinciples } from "@/widgets/CompanyPrinciples";
+import { PromoSection } from "@/widgets/PromoSection";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <CompanyPrinciples />
       <Products />
       <Contacts />
+      <PromoSection />
       <Footer />
     </main>
   );
