@@ -11,7 +11,6 @@ export const PromoSection: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
   const slogan =
     "Безпека та конфіденційність спілкування — пріоритет для нашої компанії. Все це надає нам Lecksis — месенджер майбутнього.";
   const link = "https://lecksis.com/";
-  const name = "Lecksis";
 
   return (
     <Section
